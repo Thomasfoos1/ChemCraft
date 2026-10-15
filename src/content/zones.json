@@ -1,0 +1,297 @@
+[
+  {
+    "id": 1,
+    "key": "waterworks",
+    "name": "The Waterworks",
+    "npc": "blockwell",
+    "chemistry": "Elements, atoms, chemical formulas and molecules",
+    "discovery": "water",
+    "gate": "gate1",
+    "completeAchievement": "water_wizard",
+    "fog": "#10141c",
+    "steps": [
+      {
+        "id": "talk", "type": "talk", "text": "Talk to Professor Blockwell", "target": "npc:blockwell",
+        "dialogue": [
+          "Ah! Another apprentice scientist! Excellent timing. The laboratory is in quite a predicament!",
+          "You see, everything around us is made of atoms. Even these stone blocks!",
+          "An ELEMENT is a substance made of only one kind of atom. Hydrogen and oxygen are elements.",
+          "Unfortunately, our water generator has stopped working. Perhaps you can help me restore it?",
+          "Remember: water contains TWO hydrogen atoms and ONE oxygen atom. That's H₂O!",
+          "Hydrogen crystals glow pale blue in the east wall. Oxygen ore glows red in the west wall.",
+          "Hold LEFT CLICK on a deposit to mine it. Then bring the atoms to the crafting table and give it a try!"
+        ]
+      },
+      {
+        "id": "collect", "type": "collect", "items": { "H": 2, "O": 1 }, "skipIfHas": "water",
+        "text": "Collect 2 Hydrogen (H) and 1 Oxygen (O)", "target": ["deposit:H:1", "deposit:O:1"],
+        "hint": "Hydrogen crystals glow pale blue in the east (right) wall. Oxygen ore glows red in the west (left) wall. Hold left click to mine.",
+        "reminder": ["Look for the glowing deposits! Blue hydrogen crystals on the east wall, red oxygen ore on the west wall.", "Hold left click on a deposit until it breaks."]
+      },
+      {
+        "id": "craft", "type": "craft", "recipe": "water",
+        "text": "Craft Water (H₂O) at the crafting table", "target": "table:1",
+        "hint": "Right click the crafting table in the middle of the room. Put 2 H and 1 O anywhere in the 3×3 grid.",
+        "reminder": ["The crafting table is a molecule modeler. Place two hydrogen atoms and one oxygen atom in the grid.", "The arrangement doesn't matter — only the number of each kind of atom!"]
+      },
+      {
+        "id": "use", "type": "use", "machine": "generator", "item": "water",
+        "text": "Pour the water into the generator", "textNeedItem": "Craft Water (H₂O), then use it on the generator",
+        "target": "machine:generator",
+        "hint": "The water generator is the metal machine by the west wall, next to me. Right click it while you have Water.",
+        "reminder": ["Bring the water to the generator beside me and right click it!"]
+      },
+      {
+        "id": "quiz", "type": "quiz", "text": "Answer Professor Blockwell's question", "target": "npc:blockwell",
+        "dialogue": ["Splendid! Listen to that water flow! Before the gate opens, a quick check for my new apprentice..."]
+      }
+    ],
+    "complete": [
+      "Wonderful! The water wheel turns the gears, and the gears lift the gate!",
+      "Keep your water model safe in your Discoveries book. Onward to the Crystal Caverns!"
+    ],
+    "idle": [
+      "Water is the most common compound on Earth's surface. H₂O — two hydrogens, one oxygen!",
+      "The Crystal Caverns are just through the gate. Dr. Salty will be delighted to see you."
+    ]
+  },
+  {
+    "id": 2,
+    "key": "crystal",
+    "name": "The Crystal Caverns",
+    "npc": "salty",
+    "chemistry": "Elements versus compounds, chemical formulas and mixtures",
+    "discovery": "sodium_chloride",
+    "gate": "gate2",
+    "completeAchievement": "salt_scientist",
+    "fog": "#1a2436",
+    "steps": [
+      {
+        "id": "talk", "type": "talk", "text": "Talk to Dr. Salty", "target": "npc:salty",
+        "dialogue": [
+          "Welcome to the Crystal Caverns! Beautiful, aren't they?",
+          "Unfortunately, the frozen gate has trapped us inside.",
+          "Perhaps some salt could help. Salt can lower the freezing point of water!",
+          "But first, you'll need to discover what elements make up table salt.",
+          "Table salt is sodium chloride: NaCl. It is a COMPOUND — two different elements chemically combined.",
+          "Sodium crystals sparkle lavender on the west side. Chlorine crystals glow yellow-green on the east side."
+        ]
+      },
+      {
+        "id": "collect", "type": "collect", "items": { "Na": 1, "Cl": 1 }, "skipIfHas": "sodium_chloride",
+        "text": "Collect 1 Sodium (Na) and 1 Chlorine (Cl)", "target": ["deposit:Na:2", "deposit:Cl:2"],
+        "hint": "Sodium crystals (Na) are lavender, west side of the cave. Chlorine crystals (Cl) are yellow-green, east side.",
+        "reminder": ["NaCl has one sodium and one chlorine. Find a sodium crystal to the west and a chlorine crystal to the east."]
+      },
+      {
+        "id": "craft", "type": "craft", "recipe": "sodium_chloride",
+        "text": "Craft Sodium Chloride (NaCl)", "target": "table:2",
+        "hint": "Use the crafting table in the middle of the cave. NaCl means 1 Na and 1 Cl.",
+        "reminder": ["No subscripts in NaCl means a 1:1 ratio — one sodium for every chlorine."]
+      },
+      {
+        "id": "use", "type": "use", "machine": "frozen_gate", "item": "sodium_chloride",
+        "text": "Sprinkle salt on the frozen gate", "textNeedItem": "Craft Sodium Chloride (NaCl), then use it on the frozen gate",
+        "target": "machine:frozen_gate",
+        "hint": "The frozen gate is at the far north end of the cave. Right click the ice while carrying salt.",
+        "reminder": ["Take your salt to the frozen gate in the north and right click the ice!"]
+      },
+      {
+        "id": "quiz", "type": "quiz", "text": "Answer Dr. Salty's questions", "target": "npc:salty",
+        "dialogue": ["Look at that ice melt! Salt dissolves into the thin layer of water on the ice and lowers its freezing point.", "Let's make sure that salty knowledge sticks!"]
+      }
+    ],
+    "complete": [
+      "The gate is free! Salt water freezes at a lower temperature than pure water.",
+      "That's why salt trucks spread salt on icy roads in winter. Off you go — the Carbon Caverns await!"
+    ],
+    "idle": [
+      "Saltwater is a MIXTURE: the salt and water are not chemically combined. Evaporate the water and the salt is left behind!",
+      "Sodium is a reactive metal and chlorine is a poisonous gas — yet together they make harmless salt. Chemistry is amazing!"
+    ]
+  },
+  {
+    "id": 3,
+    "key": "carbon",
+    "name": "The Carbon Caverns",
+    "npc": "carbon",
+    "chemistry": "Chemical formulas, subscripts and molecules",
+    "discovery": "carbon_dioxide",
+    "gate": "door3",
+    "completeAchievement": "carbon_collector",
+    "fog": "#120e0c",
+    "steps": [
+      {
+        "id": "talk", "type": "talk", "text": "Talk to Professor Carbon", "target": "npc:carbon",
+        "dialogue": [
+          "Careful! My carbonation machine has broken down!",
+          "Without pressure in the pipes, the door to the Limestone Ruins will never open. A tragedy!",
+          "If we can create carbon dioxide, we can restore the machine and activate the next door.",
+          "Carbon dioxide contains one carbon atom and two oxygen atoms. Think you can craft it?",
+          "Carbon deposits are dark lumps in the west wall. Oxygen ore glows red in the east wall."
+        ]
+      },
+      {
+        "id": "collect", "type": "collect", "items": { "C": 1, "O": 2 }, "skipIfHas": "carbon_dioxide",
+        "text": "Collect 1 Carbon (C) and 2 Oxygen (O)", "target": ["deposit:C:3", "deposit:O:3"],
+        "hint": "Carbon deposits are the dark lumps along the west wall. Oxygen ore is in the east wall.",
+        "reminder": ["CO₂: one carbon, two oxygen. The little 2 is a subscript!"]
+      },
+      {
+        "id": "craft", "type": "craft", "recipe": "carbon_dioxide",
+        "text": "Craft Carbon Dioxide (CO₂)", "target": "table:3",
+        "hint": "The crafting table is in the center of the cavern. The 2 in CO₂ belongs to oxygen.",
+        "reminder": ["Count carefully: the subscript 2 after O means two oxygen atoms."]
+      },
+      {
+        "id": "use", "type": "use", "machine": "carbonator", "item": "carbon_dioxide",
+        "text": "Load CO₂ into the carbonation machine", "textNeedItem": "Craft Carbon Dioxide (CO₂), then load it into the carbonation machine",
+        "target": "machine:carbonator",
+        "hint": "The carbonation machine is in the north-west corner with glass pipes on top.",
+        "reminder": ["Quickly! The carbonation machine is in the north-west corner."]
+      },
+      {
+        "id": "quiz", "type": "quiz", "text": "Answer Professor Carbon's questions", "target": "npc:carbon",
+        "dialogue": ["BUBBLES! Glorious bubbles! The pressure is rising!", "Now, prove that you truly understand subscripts..."]
+      }
+    ],
+    "complete": [
+      "The pressure door opens! Magnificent!",
+      "Remember: CO and CO₂ are different substances. Change the number of atoms and you change the substance!"
+    ],
+    "idle": [
+      "You breathe out carbon dioxide with every breath. Plants breathe it in to make sugar. A perfect partnership!",
+      "The Limestone Ruins are ancient. Dr. Calcite knows everything about them."
+    ]
+  },
+  {
+    "id": 4,
+    "key": "limestone",
+    "name": "The Limestone Ruins",
+    "npc": "calcite",
+    "chemistry": "Compounds, formula units, and physical versus chemical changes",
+    "discovery": "calcium_carbonate",
+    "gate": null,
+    "completeAchievement": "bridge_builder",
+    "fog": "#2a2418",
+    "steps": [
+      {
+        "id": "talk", "type": "talk", "text": "Talk to Dr. Calcite", "target": "npc:calcite",
+        "dialogue": [
+          "Ah, a visitor. Welcome to the Limestone Ruins. Mind the chasm — the old bridge collapsed long ago.",
+          "These ruins are made of limestone, which is mostly calcium carbonate: CaCO₃.",
+          "Calcium carbonate is found in limestone, chalk, seashells and even eggshells.",
+          "Our stone fabricator can rebuild the bridge if you give it a calcium carbonate model as a blueprint.",
+          "CaCO₃ has one calcium, one carbon and THREE oxygen atoms. Calcium ore is in the west cavern, carbon in the east cavern, and oxygen in this hall's west wall."
+        ]
+      },
+      {
+        "id": "collect", "type": "collect", "items": { "Ca": 1, "C": 1, "O": 3 }, "skipIfHas": "calcium_carbonate",
+        "text": "Collect 1 Ca, 1 C and 3 O", "target": ["deposit:Ca:4", "deposit:C:4", "deposit:O:4"],
+        "hint": "Explore the side caverns: calcium ore in the WEST cavern, carbon in the EAST cavern. Oxygen ore is in the hall's west wall.",
+        "reminder": ["CaCO₃: 1 calcium, 1 carbon, 3 oxygen. The side caverns hold what you need."]
+      },
+      {
+        "id": "craft", "type": "craft", "recipe": "calcium_carbonate",
+        "text": "Craft Calcium Carbonate (CaCO₃)", "target": "table:4",
+        "hint": "Use the crafting table in the hall. CaCO₃ contains 5 atoms in one formula unit.",
+        "reminder": ["Remember: the 3 only belongs to oxygen. One calcium, one carbon, three oxygen."]
+      },
+      {
+        "id": "use", "type": "use", "machine": "fabricator", "item": "calcium_carbonate",
+        "text": "Insert CaCO₃ into the stone fabricator", "textNeedItem": "Craft Calcium Carbonate (CaCO₃), then insert it into the fabricator",
+        "target": "machine:fabricator",
+        "hint": "The stone fabricator stands west of the broken bridge.",
+        "reminder": ["The fabricator is beside the chasm. Right click it with your calcium carbonate."]
+      },
+      {
+        "id": "quiz", "type": "quiz", "text": "Answer Dr. Calcite's questions", "target": "npc:calcite",
+        "dialogue": ["Look — the bridge rebuilds itself, block by block! Splendid.", "Let us review what you have learned in these ruins."]
+      }
+    ],
+    "quickSteps": [
+      {
+        "id": "reach", "type": "reach", "zMin": 152,
+        "text": "Cross the bridge to the Grand Laboratory", "target": "bridge",
+        "hint": "Walk north across the restored stone bridge.",
+        "reminder": ["Calcium carbonate — CaCO₃ — is in chalk and seashells. The bridge ahead is made of it. Hurry on to Dr. Matter!"]
+      }
+    ],
+    "complete": [
+      "The bridge is whole again. Breaking limestone into pieces is a physical change — it is still calcium carbonate!",
+      "Dr. Matter awaits you in the Grand Laboratory, just beyond the archway."
+    ],
+    "idle": [
+      "These fossils are the remains of sea creatures. Their shells were made of calcium carbonate!",
+      "When vinegar touches limestone it fizzes. That is a CHEMICAL change: new substances form, including carbon dioxide."
+    ]
+  },
+  {
+    "id": 5,
+    "key": "grand",
+    "name": "The Grand Laboratory",
+    "npc": "matter",
+    "chemistry": "Review of everything, plus conservation of matter",
+    "discovery": null,
+    "gate": "vault",
+    "completeAchievement": "master_of_matter",
+    "fog": "#141826",
+    "steps": [
+      {
+        "id": "talk", "type": "talk", "text": "Talk to Dr. Matter", "target": "npc:matter",
+        "dialogue": [
+          "So YOU are the apprentice who restored the water, melted the gate, powered the pipes and rebuilt the bridge!",
+          "I am Dr. Matter, head scientist of the Elemental Dungeon.",
+          "Our central reactor has failed, and the vault door to the surface is sealed tight.",
+          "To restart it, you must pass the Grand Laboratory's challenges. The stations are marked on your objective list.",
+          "Element storage lines both walls, and the advanced crafting tables are on the west side. Good luck!"
+        ]
+      },
+      {
+        "id": "formula", "type": "station", "station": "console",
+        "text": "Formula Master: deliver compounds to the console", "target": "machine:console",
+        "hint": "Right click the green-screen console on the west side to see which compounds it wants. Craft them from memory!",
+        "reminder": ["The Formula Console on the west side will tell you what to craft. No recipes — trust your memory!"]
+      },
+      {
+        "id": "sorting", "type": "station", "station": "sorter",
+        "text": "Sort substances at the Sorting Station", "target": "machine:sorter",
+        "hint": "The Sorting Station is on the east side. Element = one kind of atom. Compound = different atoms chemically combined. Mixture = substances mixed but not combined.",
+        "reminder": ["Sort each substance: element, compound or mixture. The station is on the east side."]
+      },
+      {
+        "id": "balancing", "type": "station", "station": "balancer", "optionalUnless": "balancing",
+        "text": "Balance the reactor equation", "target": "machine:balancer",
+        "hint": "Count atoms on both sides. You need the same number of H atoms and O atoms on each side.",
+        "reminder": ["Matter is conserved: atoms are never created or destroyed in a reaction. Make both sides match!"]
+      },
+      {
+        "id": "review", "type": "quiz", "sessions": ["full"],
+        "text": "Answer Dr. Matter's review questions", "target": "npc:matter",
+        "dialogue": ["Before the reactor can start, I must be sure of your mastery. A few review questions!"]
+      },
+      {
+        "id": "reactor", "type": "station", "station": "reactor",
+        "text": "Power the reactor sockets", "target": "machine:reactor",
+        "hint": "Each socket's clue describes a compound you have made. Right click a socket to read its clue, then insert the right compound.",
+        "reminder": ["Read each socket's clue. It describes a compound you already know!"]
+      },
+      {
+        "id": "exit", "type": "reach", "zMin": 216,
+        "text": "Walk through the vault into the sunlight", "target": "exit",
+        "hint": "The vault door is open! Climb the stairs to the surface.",
+        "reminder": ["The vault is open! Up the stairs and into the sunshine with you!"]
+      }
+    ],
+    "complete": [
+      "Incredible work, apprentice!",
+      "You've restored the Elemental Dungeon using the power of chemistry!",
+      "From the water we drink to the salt on our food, chemistry is everywhere!",
+      "You are officially a MASTER OF MATTER!"
+    ],
+    "idle": [
+      "Atoms are never created or destroyed in a chemical reaction — they are only rearranged.",
+      "Every substance you made today shares the same building blocks: atoms of elements."
+    ]
+  }
+]

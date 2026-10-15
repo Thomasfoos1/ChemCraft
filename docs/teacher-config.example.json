@@ -1,0 +1,20 @@
+{
+  "version": 1,
+  "sessionLength": "standard",
+  "gradeLevel": "8",
+  "difficulty": "normal",
+  "topics": {
+    "elements": true,
+    "symbols": true,
+    "compounds": true,
+    "formulas": true,
+    "mixtures": true,
+    "changes": true,
+    "states": true,
+    "conservation": true,
+    "balancing": true
+  },
+  "bonusRecipes": true,
+  "advancedExplanations": true,
+  "idleHintSeconds": 90
+}

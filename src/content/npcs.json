@@ -1,0 +1,42 @@
+{
+  "blockwell": {
+    "name": "Professor Blockwell",
+    "title": "Tutorial Scientist",
+    "zone": 1,
+    "personality": "Friendly and mildly eccentric",
+    "skin": "#c99872", "hair": "#e8e8e8", "shirt": "#3a6ec8", "tie": "#c83a3a", "eyes": "#3a7a3a",
+    "eyewear": "glasses", "beard": true, "voicePitch": 1.0
+  },
+  "salty": {
+    "name": "Dr. Salty",
+    "title": "Salt Laboratory",
+    "zone": 2,
+    "personality": "Enthusiastic and bubbly",
+    "skin": "#8a5a3a", "hair": "#2a1a10", "shirt": "#3ab8b8", "tie": "#f0f0f0", "eyes": "#2a2a6a",
+    "eyewear": "goggles", "beard": false, "voicePitch": 1.25
+  },
+  "carbon": {
+    "name": "Professor Carbon",
+    "title": "Carbon Caverns",
+    "zone": 3,
+    "personality": "Slightly dramatic",
+    "skin": "#e0b08a", "hair": "#1a1a1a", "shirt": "#4a4a4a", "tie": "#ffb02a", "eyes": "#6a3a1a",
+    "eyewear": "goggles", "beard": false, "voicePitch": 0.85
+  },
+  "calcite": {
+    "name": "Dr. Calcite",
+    "title": "Limestone Ruins",
+    "zone": 4,
+    "personality": "Calm historian who loves fossils",
+    "skin": "#b07a52", "hair": "#c8a050", "shirt": "#8a6a3a", "tie": "#3a8a5a", "eyes": "#3a5a8a",
+    "eyewear": "glasses", "beard": false, "voicePitch": 1.1
+  },
+  "matter": {
+    "name": "Dr. Matter",
+    "title": "Head Scientist",
+    "zone": 5,
+    "personality": "Grand and encouraging",
+    "skin": "#d8a880", "hair": "#6a3a8a", "shirt": "#6a3ac8", "tie": "#ffd34f", "eyes": "#2a2a2a",
+    "eyewear": "goggles", "beard": true, "voicePitch": 0.95
+  }
+}

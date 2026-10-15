@@ -1,0 +1,15 @@
+[
+  { "id": "first_reaction", "name": "First Reaction", "description": "Craft your first substance.", "icon": "flask" },
+  { "id": "water_wizard", "name": "Water Wizard", "description": "Complete the Waterworks.", "icon": "bucket" },
+  { "id": "salt_scientist", "name": "Salt Scientist", "description": "Discover NaCl and free the frozen gate.", "icon": "jar" },
+  { "id": "carbon_collector", "name": "Carbon Collector", "description": "Craft CO₂ and power the carbonation machine.", "icon": "canister" },
+  { "id": "bridge_builder", "name": "Bridge Builder", "description": "Rebuild the limestone bridge.", "icon": "chalk" },
+  { "id": "formula_expert", "name": "Formula Expert", "description": "Correctly identify five formulas.", "icon": "book" },
+  { "id": "master_of_matter", "name": "Master of Matter", "description": "Complete the Elemental Dungeon.", "icon": "star" },
+  { "id": "explorer", "name": "Explorer", "description": "Find a hidden chamber.", "icon": "map" },
+  { "id": "secret_scientist", "name": "Secret Scientist", "description": "Find all three hidden chambers.", "icon": "key" },
+  { "id": "element_collector", "name": "Element Collector", "description": "Discover all eight elements.", "icon": "atom" },
+  { "id": "bonus_brewer", "name": "Bonus Brewer", "description": "Discover three bonus substances.", "icon": "bottle" },
+  { "id": "perfect_balance", "name": "Perfect Balance", "description": "Balance the reactor equation.", "icon": "scale" },
+  { "id": "sharp_mind", "name": "Sharp Mind", "description": "Answer five questions correctly on the first try.", "icon": "bulb" }
+]

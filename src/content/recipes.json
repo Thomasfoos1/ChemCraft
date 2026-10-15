@@ -1,0 +1,107 @@
+[
+  {
+    "id": "water", "name": "Water", "formula": "H2O", "kind": "molecule", "classification": "compound",
+    "icon": "bucket", "iconColor": "#3d7cff", "story": true, "difficulty": 1,
+    "everyday": "Drinking water, rain, rivers and oceans.",
+    "explanation": "Water contains two hydrogen atoms and one oxygen atom.",
+    "fact": "About 60% of your body is water!"
+  },
+  {
+    "id": "oxygen_gas", "name": "Oxygen Gas", "formula": "O2", "kind": "element-molecule", "classification": "element",
+    "icon": "tank", "iconColor": "#ff5b4f", "story": false, "difficulty": 1,
+    "everyday": "The oxygen in the air you breathe.",
+    "explanation": "Oxygen gas is made of molecules containing two oxygen atoms. Because it has only ONE kind of atom, it is still an element, not a compound.",
+    "fact": "Oxygen gas makes up about 21% of the air."
+  },
+  {
+    "id": "hydrogen_gas", "name": "Hydrogen Gas", "formula": "H2", "kind": "element-molecule", "classification": "element",
+    "icon": "tank", "iconColor": "#8fd8ff", "story": false, "difficulty": 1,
+    "everyday": "A clean-burning fuel used in some buses and rockets.",
+    "explanation": "Hydrogen gas is made of molecules containing two hydrogen atoms. One kind of atom means it is an element.",
+    "fact": "Hydrogen gas is about 14 times lighter than air."
+  },
+  {
+    "id": "nitrogen_gas", "name": "Nitrogen Gas", "formula": "N2", "kind": "element-molecule", "classification": "element",
+    "icon": "tank", "iconColor": "#7d8cff", "story": false, "difficulty": 1,
+    "everyday": "Most of the air around you.",
+    "explanation": "Nitrogen gas molecules contain two nitrogen atoms. One kind of atom means it is an element.",
+    "fact": "Liquid nitrogen is so cold (−196 °C) that it is used to freeze foods quickly."
+  },
+  {
+    "id": "carbon_dioxide", "name": "Carbon Dioxide", "formula": "CO2", "kind": "molecule", "classification": "compound",
+    "icon": "canister", "iconColor": "#c9c9c9", "story": true, "difficulty": 1,
+    "everyday": "The bubbles in soda; the gas you breathe out.",
+    "explanation": "Carbon dioxide contains one carbon atom and two oxygen atoms. The small 2 is a subscript: it tells us there are two oxygen atoms.",
+    "fact": "Plants take in carbon dioxide to make their food."
+  },
+  {
+    "id": "carbon_monoxide", "name": "Carbon Monoxide", "formula": "CO", "kind": "molecule", "classification": "compound",
+    "icon": "canister", "iconColor": "#8a6a6a", "story": false, "difficulty": 2,
+    "everyday": "Detected by the CO alarms in many homes.",
+    "explanation": "Carbon monoxide has one carbon atom and only ONE oxygen atom. A different ratio of atoms makes a completely different substance from CO₂ — one that is poisonous to breathe.",
+    "fact": "\"Mono\" means one and \"di\" means two — that is how CO and CO₂ get their names."
+  },
+  {
+    "id": "ozone", "name": "Ozone", "formula": "O3", "kind": "element-molecule", "classification": "element",
+    "icon": "tank", "iconColor": "#6fc3ff", "story": false, "difficulty": 2,
+    "everyday": "The ozone layer high in the sky blocks harmful UV light.",
+    "explanation": "Ozone molecules contain three oxygen atoms. O₂ and O₃ are both forms of the element oxygen, but they behave differently.",
+    "fact": "The ozone layer is 15–35 km above the ground."
+  },
+  {
+    "id": "hydrogen_peroxide", "name": "Hydrogen Peroxide", "formula": "H2O2", "kind": "molecule", "classification": "compound",
+    "icon": "bottle", "iconColor": "#5a3a22", "story": false, "difficulty": 2,
+    "everyday": "A diluted form is used to clean cuts.",
+    "explanation": "Hydrogen peroxide has two hydrogen atoms and two oxygen atoms. It uses the same elements as water, but a different ratio makes a different substance.",
+    "fact": "It is sold in brown bottles because light breaks it down."
+  },
+  {
+    "id": "sodium_chloride", "name": "Sodium Chloride", "formula": "NaCl", "kind": "ionic", "classification": "compound",
+    "icon": "jar", "iconColor": "#ffffff", "story": true, "difficulty": 1,
+    "everyday": "Table salt on food; road salt for icy streets.",
+    "explanation": "Table salt is an ionic compound made of sodium and chloride ions in a 1:1 ratio. It forms a crystal, not separate molecules, so NaCl describes one formula unit.",
+    "fact": "Salt crystals are tiny cubes — just like blocks!"
+  },
+  {
+    "id": "calcium_carbonate", "name": "Calcium Carbonate", "formula": "CaCO3", "kind": "ionic", "classification": "compound",
+    "icon": "chalk", "iconColor": "#f4f0e6", "story": true, "difficulty": 2,
+    "everyday": "Chalk, limestone, marble, seashells and eggshells.",
+    "explanation": "Calcium carbonate contains calcium, carbon and oxygen. Oxygen appears three times in one formula unit, shown by the subscript 3.",
+    "fact": "The White Cliffs of Dover are made of chalk from tiny ancient sea creatures."
+  },
+  {
+    "id": "methane", "name": "Methane", "formula": "CH4", "kind": "molecule", "classification": "compound",
+    "icon": "tank", "iconColor": "#7fd16b", "story": false, "difficulty": 2,
+    "everyday": "Natural gas used in many stoves and furnaces.",
+    "explanation": "Methane contains one carbon atom and four hydrogen atoms.",
+    "fact": "Natural gas has no smell — companies add a smelly chemical so leaks can be noticed."
+  },
+  {
+    "id": "ammonia", "name": "Ammonia", "formula": "NH3", "kind": "molecule", "classification": "compound",
+    "icon": "bottle", "iconColor": "#b9c4ff", "story": false, "difficulty": 2,
+    "everyday": "Used to make fertilizers that help crops grow.",
+    "explanation": "Ammonia contains one nitrogen atom and three hydrogen atoms.",
+    "fact": "Fertilizers made from ammonia help grow food for billions of people."
+  },
+  {
+    "id": "iron_oxide", "name": "Iron(III) Oxide", "formula": "Fe2O3", "kind": "ionic", "classification": "compound",
+    "icon": "rust", "iconColor": "#a8452a", "story": false, "difficulty": 3,
+    "everyday": "Rust on old bikes, nails and cars.",
+    "explanation": "Iron(III) oxide is an ionic compound with iron and oxide ions in a 2:3 ratio: 2 iron and 3 oxygen in each formula unit.",
+    "fact": "Mars looks red because its dust contains iron oxide."
+  },
+  {
+    "id": "sodium_bicarbonate", "name": "Sodium Bicarbonate", "formula": "NaHCO3", "kind": "ionic", "classification": "compound",
+    "icon": "box", "iconColor": "#ffb14a", "story": false, "difficulty": 3,
+    "everyday": "Baking soda, which helps cakes and cookies rise.",
+    "explanation": "Baking soda contains sodium, hydrogen, carbon and oxygen: 1 Na, 1 H, 1 C and 3 O in each formula unit.",
+    "fact": "Baking soda releases carbon dioxide bubbles that make dough fluffy."
+  },
+  {
+    "id": "glucose", "name": "Glucose", "formula": "C6H12O6", "kind": "molecule", "classification": "compound",
+    "icon": "sugar", "iconColor": "#fff7d6", "story": false, "difficulty": 3,
+    "everyday": "A sugar that living things use for energy.",
+    "explanation": "Glucose contains 6 carbon, 12 hydrogen and 6 oxygen atoms — 24 atoms in all! Stack atoms in the crafting slots to fit them.",
+    "fact": "Plants make glucose from carbon dioxide and water using sunlight."
+  }
+]

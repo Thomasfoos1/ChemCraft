@@ -1,0 +1,26 @@
+{
+  "formulaMasterPool": ["sodium_chloride", "carbon_dioxide", "water", "calcium_carbonate"],
+  "sockets": [
+    { "id": "A", "recipe": "water", "label": "COOLANT", "clue": "The compound that fills rivers, rain and oceans." },
+    { "id": "B", "recipe": "sodium_chloride", "label": "CRYSTAL CORE", "clue": "An ionic compound sprinkled on food and on icy roads." },
+    { "id": "C", "recipe": "carbon_dioxide", "label": "PRESSURE", "clue": "The gas that makes soda fizzy — and that you breathe out." },
+    { "id": "D", "recipe": "calcium_carbonate", "label": "FRAME", "clue": "The compound in chalk, limestone and seashells." }
+  ],
+  "sorting": [
+    { "id": "o2", "label": "Oxygen gas", "formula": "O2", "category": "element", "why": "O₂ contains only one kind of atom: oxygen." },
+    { "id": "water", "label": "Pure water", "formula": "H2O", "category": "compound", "why": "Water is hydrogen and oxygen chemically combined." },
+    { "id": "salt", "label": "Table salt", "formula": "NaCl", "category": "compound", "why": "Salt is sodium and chlorine chemically combined." },
+    { "id": "air", "label": "Air", "formula": null, "category": "mixture", "why": "Air is nitrogen, oxygen, argon and other gases mixed together, not combined." },
+    { "id": "saltwater", "label": "Saltwater", "formula": null, "category": "mixture", "why": "Salt dissolved in water can be separated again by evaporation." },
+    { "id": "iron", "label": "Iron", "formula": "Fe", "category": "element", "why": "Iron is made of only iron atoms." },
+    { "id": "co2", "label": "Carbon dioxide", "formula": "CO2", "category": "compound", "why": "CO₂ is carbon and oxygen chemically combined.", "extra": true },
+    { "id": "trailmix", "label": "Trail mix", "formula": null, "category": "mixture", "why": "You can pick out the nuts and raisins — nothing is chemically combined.", "extra": true },
+    { "id": "carbon", "label": "Diamond (pure carbon)", "formula": "C", "category": "element", "why": "Diamond is made only of carbon atoms.", "extra": true }
+  ],
+  "balancing": {
+    "reactants": ["H2", "O2"],
+    "products": ["H2O"],
+    "solution": [2, 1, 2],
+    "maxCoefficient": 6
+  }
+}

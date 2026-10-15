@@ -1,0 +1,199 @@
+[
+  {
+    "id": "z1_atoms_h2o", "zone": 1, "topic": "formulas", "type": "numeric", "core": true, "formula": true, "difficulty": 1,
+    "prompt": "How many total atoms are represented in the formula H₂O?", "display": "H₂O",
+    "answer": 3,
+    "hints": ["Count every atom. The small 2 belongs to the H in front of it.", "H₂ means 2 hydrogen atoms. Then add the oxygen atom."],
+    "explanation": "H₂O has 2 hydrogen atoms + 1 oxygen atom = 3 atoms in one water molecule."
+  },
+  {
+    "id": "z1_symbol_o", "zone": 1, "topic": "symbols", "type": "mc", "formula": true, "difficulty": 1,
+    "prompt": "What is the chemical symbol for oxygen?",
+    "choices": ["Ox", "O", "Og", "Om"], "answer": 1,
+    "hints": ["Chemical symbols are one or two letters.", "Look at the oxygen atoms in your inventory."],
+    "explanation": "Oxygen's symbol is O. Symbols are one capital letter, sometimes followed by one lowercase letter."
+  },
+  {
+    "id": "z1_element_def", "zone": 1, "topic": "elements", "type": "mc", "difficulty": 1,
+    "prompt": "What is an element?",
+    "choices": [
+      "A substance made of only one kind of atom",
+      "Any mixture of two substances",
+      "Two or more kinds of atoms chemically combined",
+      "A kind of molecule found only in water"
+    ],
+    "answer": 0,
+    "hints": ["Think about hydrogen and oxygen — what makes each of them special?", "An element cannot be broken down into simpler substances. It has just ONE kind of atom."],
+    "explanation": "An element is made of only one kind of atom, like hydrogen (H) or oxygen (O)."
+  },
+  {
+    "id": "z1_subscript", "zone": 1, "topic": "formulas", "type": "mc", "formula": true, "difficulty": 1,
+    "prompt": "What does the small 2 in H₂O tell you?", "display": "H₂O",
+    "choices": ["There are 2 water molecules", "There are 2 hydrogen atoms", "There are 2 oxygen atoms", "Water has 2 elements"],
+    "answer": 1,
+    "hints": ["A subscript describes the atom written just BEFORE it.", "The 2 comes right after H."],
+    "explanation": "A subscript tells how many atoms of the element just before it. H₂ means 2 hydrogen atoms."
+  },
+  {
+    "id": "z1_atomic_number", "zone": 1, "topic": "elements", "type": "numeric", "difficulty": 2,
+    "prompt": "What is the atomic number of hydrogen? (Hover over a hydrogen atom in your inventory to check!)",
+    "answer": 1,
+    "hints": ["The atomic number is the number of protons in an atom.", "Hydrogen is the very first element on the periodic table."],
+    "explanation": "Hydrogen's atomic number is 1: every hydrogen atom has exactly 1 proton."
+  },
+
+  {
+    "id": "z2_elements_nacl", "zone": 2, "topic": "compounds", "type": "numeric", "core": true, "formula": true, "difficulty": 1,
+    "prompt": "How many different elements are in NaCl?", "display": "NaCl",
+    "answer": 2,
+    "hints": ["Each element symbol starts with a capital letter.", "Na is sodium. Cl is chlorine. Count the capital letters!"],
+    "explanation": "NaCl contains 2 elements: sodium (Na) and chlorine (Cl)."
+  },
+  {
+    "id": "z2_salt_compound", "zone": 2, "topic": "compounds", "type": "mc", "core": true, "difficulty": 1,
+    "prompt": "Is table salt (NaCl) an element or a compound?", "display": "NaCl",
+    "choices": ["An element", "A compound", "A mixture"],
+    "answer": 1,
+    "hints": ["How many different kinds of atoms are in NaCl?", "When two or more different elements are chemically combined, we get a ..."],
+    "explanation": "Salt is a compound: sodium and chlorine chemically combined in a fixed 1:1 ratio."
+  },
+  {
+    "id": "z2_saltwater_mixture", "zone": 2, "topic": "mixtures", "type": "mc", "core": true, "difficulty": 1,
+    "prompt": "When salt dissolves in water, is the saltwater a mixture or a pure substance?",
+    "choices": ["A mixture", "A pure substance"],
+    "answer": 0,
+    "hints": ["Are the salt and water chemically combined, or just mixed together?", "If you let the water evaporate, the salt is left behind. Could you do that with a compound?"],
+    "explanation": "Saltwater is a mixture. The salt and water are not chemically combined, and can be separated by evaporating the water."
+  },
+  {
+    "id": "z2_symbol_na", "zone": 2, "topic": "symbols", "type": "mc", "formula": true, "difficulty": 1,
+    "prompt": "Which symbol stands for sodium?",
+    "choices": ["So", "Sd", "Na", "S"],
+    "answer": 2,
+    "hints": ["Sodium's symbol comes from its Latin name, natrium.", "Check the sodium atoms you just mined!"],
+    "explanation": "Sodium's symbol is Na, from the Latin word natrium."
+  },
+  {
+    "id": "z2_ice_state", "zone": 2, "topic": "states", "type": "mc", "difficulty": 1,
+    "prompt": "When the ice on the gate melted, what kind of change happened?",
+    "choices": ["A change of state (solid to liquid)", "A new substance formed", "Water turned into salt"],
+    "answer": 0,
+    "hints": ["Is melted ice still water?", "Ice and liquid water are both H₂O — just in different states."],
+    "explanation": "Melting is a change of state from solid to liquid. It is a physical change: the water is still H₂O."
+  },
+
+  {
+    "id": "z3_oxygen_co2", "zone": 3, "topic": "formulas", "type": "numeric", "core": true, "formula": true, "difficulty": 1,
+    "prompt": "How many oxygen atoms are in CO₂?", "display": "CO₂",
+    "answer": 2,
+    "hints": ["Look at the subscript after O.", "The small 2 after O means two oxygen atoms."],
+    "explanation": "CO₂ has 2 oxygen atoms — that's what the subscript 2 tells us."
+  },
+  {
+    "id": "z3_total_co2", "zone": 3, "topic": "formulas", "type": "numeric", "core": true, "formula": true, "difficulty": 1,
+    "prompt": "How many total atoms are in one CO₂ molecule?", "display": "CO₂",
+    "answer": 3,
+    "hints": ["Add the carbon atoms and the oxygen atoms.", "1 carbon + 2 oxygen = ?"],
+    "explanation": "One carbon atom plus two oxygen atoms = 3 atoms in each CO₂ molecule."
+  },
+  {
+    "id": "z3_co_vs_co2", "zone": 3, "topic": "compounds", "type": "mc", "core": true, "difficulty": 1,
+    "prompt": "Are CO and CO₂ the same substance?",
+    "choices": ["Yes — they contain the same elements", "No — a different ratio of atoms makes a different substance"],
+    "answer": 1,
+    "hints": ["Count the oxygen atoms in each formula.", "CO has 1 oxygen; CO₂ has 2. Does changing the recipe change the result?"],
+    "explanation": "CO (carbon monoxide) and CO₂ (carbon dioxide) are different substances with different properties. Different atomic ratios make different substances."
+  },
+  {
+    "id": "z3_ch4", "zone": 3, "topic": "formulas", "type": "mc", "formula": true, "difficulty": 2,
+    "prompt": "Methane has the formula CH₄. What does the 4 tell you?", "display": "CH₄",
+    "choices": ["There are 4 carbon atoms", "There are 4 hydrogen atoms", "There are 4 molecules", "There are 4 elements"],
+    "answer": 1,
+    "hints": ["A subscript belongs to the element just before it.", "Which symbol comes right before the 4?"],
+    "explanation": "The 4 follows H, so each methane molecule has 4 hydrogen atoms (and 1 carbon atom)."
+  },
+  {
+    "id": "z3_gas_state", "zone": 3, "topic": "states", "type": "mc", "difficulty": 1,
+    "prompt": "The CO₂ bubbles in a soda are in which state of matter?",
+    "choices": ["Solid", "Liquid", "Gas"],
+    "answer": 2,
+    "hints": ["Bubbles rise and escape into the air.", "Carbon dioxide is a gas at room temperature."],
+    "explanation": "The bubbles are carbon dioxide gas escaping from the liquid."
+  },
+
+  {
+    "id": "z4_elements_caco3", "zone": 4, "topic": "compounds", "type": "numeric", "core": true, "formula": true, "difficulty": 1,
+    "prompt": "How many different elements are represented in CaCO₃?", "display": "CaCO₃",
+    "answer": 3,
+    "hints": ["Each element symbol starts with a capital letter.", "Ca, C and O — how many is that?"],
+    "explanation": "CaCO₃ contains 3 elements: calcium (Ca), carbon (C) and oxygen (O)."
+  },
+  {
+    "id": "z4_atoms_caco3", "zone": 4, "topic": "formulas", "type": "numeric", "core": true, "formula": true, "difficulty": 1,
+    "prompt": "How many atoms are represented in one formula unit of CaCO₃?", "display": "CaCO₃",
+    "answer": 5,
+    "hints": ["Count 1 for each symbol without a subscript, then add the subscripts.", "1 Ca + 1 C + 3 O = ?"],
+    "explanation": "1 calcium + 1 carbon + 3 oxygen = 5 atoms in one formula unit of CaCO₃."
+  },
+  {
+    "id": "z4_breaking_physical", "zone": 4, "topic": "changes", "type": "mc", "core": true, "difficulty": 1,
+    "prompt": "Is breaking limestone into smaller pieces a physical or chemical change?",
+    "choices": ["Physical change", "Chemical change"],
+    "answer": 0,
+    "hints": ["After breaking, is each piece still limestone?", "No new substance forms — the pieces are still calcium carbonate."],
+    "explanation": "Breaking limestone is a physical change. The pieces are smaller, but they are still calcium carbonate."
+  },
+  {
+    "id": "z4_element_vs_compound", "zone": 4, "topic": "compounds", "type": "mc", "core": true, "difficulty": 1,
+    "prompt": "What is the difference between an element and a compound?",
+    "choices": [
+      "An element has one kind of atom; a compound has two or more kinds of atoms chemically combined",
+      "An element is always a gas; a compound is always a solid",
+      "An element is a mixture; a compound is pure",
+      "There is no difference"
+    ],
+    "answer": 0,
+    "hints": ["Think of O₂ (oxygen gas) versus CO₂ (carbon dioxide).", "Count the kinds of atoms: O₂ has one kind, CO₂ has two."],
+    "explanation": "Elements contain only one kind of atom. Compounds contain two or more different elements chemically combined in a fixed ratio."
+  },
+  {
+    "id": "z4_chemical_sign", "zone": 4, "topic": "changes", "type": "mc", "difficulty": 2,
+    "prompt": "Which of these is a sign of a CHEMICAL change?",
+    "choices": ["Ice melting", "Chalk breaking in half", "Gas bubbles forming when vinegar touches limestone", "Sugar dissolving in tea"],
+    "answer": 2,
+    "hints": ["A chemical change makes a NEW substance.", "Unexpected bubbles of a new gas are a clue that a new substance formed."],
+    "explanation": "Vinegar and limestone react to form new substances, including carbon dioxide gas. Melting, breaking and dissolving are physical changes."
+  },
+
+  {
+    "id": "z5_conservation", "zone": 5, "topic": "conservation", "type": "mc", "difficulty": 1,
+    "prompt": "In a chemical reaction, how does the total mass of the products compare with the total mass of the reactants?",
+    "choices": ["The products have more mass", "The products have less mass", "The total mass stays the same"],
+    "answer": 2,
+    "hints": ["Are atoms created or destroyed in a reaction?", "Atoms are only rearranged, so the total mass is ..."],
+    "explanation": "Mass is conserved. Atoms are rearranged into new substances, but none are created or destroyed."
+  },
+  {
+    "id": "z5_states_particles", "zone": 5, "topic": "states", "type": "mc", "difficulty": 1,
+    "prompt": "In which state of matter are the particles farthest apart and moving freely?",
+    "choices": ["Solid", "Liquid", "Gas"],
+    "answer": 2,
+    "hints": ["Think of steam rising from the vents.", "Gases spread out to fill their container."],
+    "explanation": "In a gas, particles are far apart and move freely. In a solid they vibrate in fixed positions."
+  },
+  {
+    "id": "z5_formula_glucose", "zone": 5, "topic": "formulas", "type": "numeric", "formula": true, "difficulty": 2,
+    "prompt": "How many atoms are in one molecule of glucose, C₆H₁₂O₆?", "display": "C₆H₁₂O₆",
+    "answer": 24,
+    "hints": ["Add all three subscripts.", "6 + 12 + 6 = ?"],
+    "explanation": "6 carbon + 12 hydrogen + 6 oxygen = 24 atoms in one glucose molecule."
+  },
+  {
+    "id": "z5_rust_change", "zone": 5, "topic": "changes", "type": "mc", "difficulty": 1,
+    "prompt": "An iron nail slowly turns into reddish rust (Fe₂O₃). What kind of change is this?",
+    "choices": ["Physical change", "Chemical change"],
+    "answer": 1,
+    "hints": ["Is rust the same substance as iron?", "Iron combines with oxygen to form a new compound."],
+    "explanation": "Rusting is a chemical change: iron reacts with oxygen to form a new substance, iron(III) oxide."
+  }
+]
