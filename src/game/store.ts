@@ -565,6 +565,15 @@ export const useGame = create<GameStore>((set, get) => {
         const lines = zone.id === 5 && s.flags['vault_open'] ? zone.complete.slice(-2) : [zone.idle[Math.floor(Math.random() * zone.idle.length)]];
         return get().showDialogue(npcId, lines);
       }
+      if (zone.id > active) {
+        // The player walked ahead of an unfinished zone: point them back to it.
+        const pending = zoneDef(active);
+        const pendingNpc = NPCS[pending.npc];
+        const pendingStep = zoneSteps(pending, plan)[s.zones[active]?.step ?? 0];
+        const redirect = `Before I can help you here, ${pendingNpc?.name ?? 'a scientist'} in ${pending.name} is still waiting for you${pendingStep ? `: ${pendingStep.text.charAt(0).toLowerCase()}${pendingStep.text.slice(1)}` : ''}. Head back and finish that first!`;
+        if (step.type === 'talk') return get().showDialogue(npcId, [...(step.dialogue ?? []), redirect], { kind: 'talkDone', zone: zone.id });
+        return get().showDialogue(npcId, [redirect]);
+      }
       if (step.type === 'talk') return get().showDialogue(npcId, step.dialogue ?? [], { kind: 'talkDone', zone: zone.id });
       if (step.type === 'quiz') return get().showDialogue(npcId, step.dialogue ?? [], { kind: 'startQuiz', zone: zone.id, stepId: step.id });
       const lines = step.reminder?.length ? step.reminder : step.hint ? [step.hint] : zone.idle;

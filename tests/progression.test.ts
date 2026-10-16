@@ -80,6 +80,12 @@ describe('quest prerequisites and step logic', () => {
     expect(advanceSteps(1, steps, 0, { ...c, flags: { ...c.flags, [flagKey.quiz(1, 'quiz')]: true } })).toBe(5);
   });
 
+  it('does not let a skipped intro chat block the zone once its puzzle is solved', () => {
+    const steps = zoneSteps(zoneDef(4), plan);
+    const c = ctx({ flags: { [flagKey.used('fabricator')]: true }, recipesDiscovered: ['calcium_carbonate'] });
+    expect(advanceSteps(4, steps, 0, c)).toBe(4); // stops at the learning check
+  });
+
   it('never skips ahead past an incomplete step', () => {
     const steps = zoneSteps(zoneDef(1), plan);
     expect(advanceSteps(1, steps, 0, ctx({ recipesDiscovered: ['water'] }))).toBe(0);

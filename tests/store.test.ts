@@ -193,6 +193,46 @@ describe('game store integration', () => {
     expect(G().save!.achievements).toContain('perfect_balance');
   });
 
+  it('skipping a scientist intro still starts the learning check after the puzzle', () => {
+    // Finish zones 1-3 instantly, then solve the Limestone puzzle without talking to Dr. Calcite.
+    const s = G().save!;
+    for (const z of [1, 2, 3]) s.zones[z] = { step: 5, completed: true };
+    s.recipesDiscovered.push('calcium_carbonate'); // crafted, then used in the fabricator
+    G().setFlag('bridge_built');
+    G().markUsed('fabricator');
+    expect(G().save!.zones[4].step).toBe(4); // talk, collect, craft and use are all satisfied
+    expect(G().overlay).toBe('dialogue'); // Dr. Calcite calls the quiz anyway
+    expect(G().dialogue!.npcId).toBe('calcite');
+  });
+
+  it('recovers a save where the Limestone intro was skipped and the final lab was finished', () => {
+    // Mirrors a real stuck save: zone 4 at step 0, all Grand Laboratory stations done.
+    const s = G().save!;
+    for (const z of [1, 2, 3]) s.zones[z] = { step: 5, completed: true };
+    s.recipesDiscovered.push('water', 'sodium_chloride', 'carbon_dioxide', 'calcium_carbonate');
+    Object.assign(s.flags, {
+      bridge_built: true, 'used:fabricator': true, 'talk:5': true,
+      'station:console': true, 'station:sorter': true, 'station:reactor': true,
+    });
+    G().refreshQuests(190);
+    expect(G().save!.zones[4].step).toBe(4); // now waiting only on Dr. Calcite's questions
+    // Dr. Matter points the player back instead of silently doing nothing.
+    G().talk('matter');
+    expect(G().dialogue!.lines.join(' ')).toMatch(/Dr\. Calcite in The Limestone Ruins/);
+    G().dialogueClose();
+    // Finish Dr. Calcite's quiz; everything in the Grand Laboratory then completes and the reactor starts.
+    G().talk('calcite');
+    G().dialogueClose();
+    expect(G().overlay).toBe('quiz');
+    while (G().quiz) {
+      for (let v = 0; v < 6 && !G().quiz!.attempt.resolved; v++) { G().quizSelect(v); G().quizSubmit(); }
+      G().quizNext();
+    }
+    expect(G().save!.zones[4].completed).toBe(true);
+    expect(emitted).toContainEqual({ type: 'reactorStart' });
+    expect(G().save!.zones[5].step).toBe(4); // only "walk into the sunlight" remains
+  });
+
   it('persists and resumes', () => {
     G().giveItem('Ca', 4);
     G().persist();

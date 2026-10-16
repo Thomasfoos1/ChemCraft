@@ -45,13 +45,16 @@ function Objective() {
   const save = useGame((s) => s.save);
   const plan = useGame((s) => s.plan);
   const idleHint = useGame((s) => s.idleHint);
+  const currentZone = useGame((s) => s.currentZone);
   if (!save || !plan) return null;
   const v = objectiveView(save, plan);
+  const ahead = currentZone > v.zoneId && !save.completed;
   return (
     <div className="objective dark-panel passive" aria-live="polite">
       <div className="zone-name">{v.zoneName}</div>
       <div className="obj-text">{v.text}</div>
       {v.detail && <div className="obj-detail">{v.detail}</div>}
+      {ahead && <div className="idle-hint">You skipped this! Go back to {v.zoneName} to finish it before moving on.</div>}
       <div className="obj-steps">
         {Array.from({ length: v.stepCount }, (_, i) => (
           <span key={i} className={i < v.stepIndex ? 'done' : i === v.stepIndex ? 'cur' : ''} />

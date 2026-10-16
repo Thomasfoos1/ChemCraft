@@ -388,7 +388,12 @@ export function ReactorPanel() {
       </div>
       {allPowered && !save.flags['reactor_on'] && (
         <div style={{ marginTop: 8, color: '#1a4a5a' }}>
-          All sockets are powered! {view.step && view.step.station !== 'reactor' && view.zoneId === 5 ? `Finish the remaining challenge to start the reactor: ${view.text}.` : 'Stand back...'}
+          All sockets are powered!{' '}
+          {view.zoneId !== 5
+            ? `The reactor can't start until you finish ${view.zoneName}: ${view.text}.`
+            : view.step && view.step.station !== 'reactor'
+              ? `Finish the remaining challenge to start the reactor: ${view.text}.`
+              : 'Stand back...'}
         </div>
       )}
       {save.flags['reactor_on'] && <div style={{ marginTop: 8, color: '#1a5a1a' }}>The reactor is running and the vault is open!</div>}

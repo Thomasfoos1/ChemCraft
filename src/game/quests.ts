@@ -61,8 +61,11 @@ export function isStepComplete(zone: number, step: StepDef, ctx: QuestContext): 
 
 /** Advance past every completed step. Returns the new step index (== steps.length when the zone is done). */
 export function advanceSteps(zone: number, steps: StepDef[], current: number, ctx: QuestContext): number {
+  // Solving the zone's machine puzzle means the player clearly got the job done, even if
+  // they skipped the scientist's introduction, so the intro chat must not block the quiz.
+  const puzzleSolved = steps.some((s) => s.type === 'use' && isStepComplete(zone, s, ctx));
   let i = current;
-  while (i < steps.length && isStepComplete(zone, steps[i], ctx)) i++;
+  while (i < steps.length && (isStepComplete(zone, steps[i], ctx) || (steps[i].type === 'talk' && puzzleSolved))) i++;
   return i;
 }
 
