@@ -674,6 +674,50 @@ export function generateDungeon(): Layout {
     L.markers['exit'] = [23.5, 19, 218];
   }
 
+  // =====================================================================
+  // EXTRA LIGHTING — wall lamps and torch posts for corners and side caves
+  // that the main lights don't reach.
+  // =====================================================================
+  {
+    const plainWall = new Set<number>([
+      B.STONE, B.COBBLE, B.BRICKS, B.MOSSY, B.DEEPSLATE, B.DEEP_BRICKS, B.COAL_BLOCK, B.GRAVEL,
+      B.LIMESTONE, B.LIME_BRICKS, B.LIME_CHISELED, B.FOSSIL,
+    ]);
+    const wallLamp = (x: number, y: number, z: number) => {
+      if (plainWall.has(w.get(x, y, z))) set(x, y, z, B.LAMP);
+    };
+    const post = (x: number, z: number, block: number) => {
+      if (w.get(x, FLOOR, z) === B.AIR && w.get(x, FLOOR + 1, z) === B.AIR && w.isSolid(x, FLOOR - 1, z)) torchPost(x, z, block);
+    };
+    const y = FLOOR + 3;
+    // Waterworks: all four walls.
+    for (const z of [6, 17, 28]) wallLamp(11, y, z);
+    for (const z of [6, 19, 29]) wallLamp(36, y, z);
+    for (const x of [14, 33]) { wallLamp(x, y, 3); wallLamp(x, y, 32); }
+    // Carbon Caverns: the four corners.
+    for (const [x, z] of [[11, 76], [36, 76], [11, 105], [36, 105]]) post(x, z, B.DEEP_BRICKS);
+    // Limestone Ruins: hall walls and both side caverns.
+    for (const z of [114, 145, 150]) { wallLamp(9, y, z); wallLamp(38, y, z); }
+    for (const x of [13, 34]) { wallLamp(x, y, 111); wallLamp(x, y, 152); }
+    for (const [x, z] of [[6, 117], [6, 123], [41, 117], [41, 122]]) post(x, z, B.LIME_BRICKS);
+    // Corridors between zones.
+    for (const [x, yy, z] of [[21, 8, 34], [26, 8, 36], [21, 8, 72], [26, 8, 72], [21, 8, 110], [26, 8, 109]] as Vec3[]) {
+      if (plainWall.has(w.get(x, yy, z)) || w.get(x, yy, z) === B.PACKED_ICE) set(x, yy, z, B.LAMP);
+    }
+    // Glowing floor tiles on a grid, so the middle of each room is lit too.
+    const plainFloor = new Set<number>([...plainWall, B.LAB_TILE]);
+    const floorLamps = (x0: number, x1: number, z0: number, z1: number, step: number, skip: (z: number) => boolean = () => false) => {
+      for (let z = z0; z <= z1; z += step)
+        for (let x = x0; x <= x1; x += step) {
+          if (skip(z)) continue;
+          if (plainFloor.has(w.get(x, FLOOR - 1, z)) && w.get(x, FLOOR, z) === B.AIR) set(x, FLOOR - 1, z, B.LAMP);
+        }
+    };
+    floorLamps(15, 33, 7, 25, 6); // Waterworks (stays clear of the channel at z 27-28)
+    floorLamps(13, 34, 79, 104, 5); // Carbon Caverns: still the darkest zone, but readable
+    floorLamps(12, 36, 114, 150, 6, (z) => z >= 131 && z <= 141); // Limestone hall, not over the chasm
+  }
+
   // Sprinkle a few glowing mushrooms for atmosphere in dark corners.
   for (let i = 0; i < 40; i++) {
     const x = Math.floor(rng() * WORLD_W), z = Math.floor(rng() * 200);
