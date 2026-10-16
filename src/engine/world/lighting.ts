@@ -155,4 +155,4 @@ export function lightCurve(level: number, minimum = AMBIENT.value): number {
 }
 
 /** Ambient floor and brightness blend, adjustable from the brightness setting. */
-export const AMBIENT = { value: 0.11, brightness: 0.625 };
+export const AMBIENT = { value: 0.5, brightness: 0.625 };

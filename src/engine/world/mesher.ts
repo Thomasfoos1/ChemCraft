@@ -176,7 +176,11 @@ export function buildChunk(w: VoxelWorld, cx: number, cy: number, cz: number): C
             const aoF = emissive ? 1 : AO_CURVE[ao];
             const shade = emissive ? Math.max(face.shade, 0.85) : face.shade;
             const L = (l: number) => LIGHT_TABLE[Math.min(180, Math.round(Math.min(15, l) * 12))];
-            cols.push([toLinear(L(lr) * shade * aoF), toLinear(L(lg) * shade * aoF), toLinear(L(lb) * shade * aoF)]);
+            // Face shading and AO darken faces, but never below a floor tied to the ambient
+            // level, so corners and undersides in unlit areas remain readable.
+            const floor = AMBIENT.value * (0.7 + 0.3 * shade);
+            const lit = (l: number) => toLinear(Math.max(L(l) * shade * aoF, floor));
+            cols.push([lit(lr), lit(lg), lit(lb)]);
           }
 
           const base = target.vcount;

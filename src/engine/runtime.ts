@@ -313,7 +313,8 @@ export class Runtime {
     const s = game();
     const quality = QUALITY[s.settings.graphics];
     this.particles.density = quality.particles;
-    const amb = 0.07 + s.settings.brightness * 0.08;
+    // Ambient floor: unlit areas stay clearly visible (brightness slider tunes it).
+    const amb = 0.38 + s.settings.brightness * 0.24;
     const blend = 0.25 + s.settings.brightness * 0.75;
     if (amb !== AMBIENT.value || blend !== AMBIENT.brightness) {
       AMBIENT.value = amb;
