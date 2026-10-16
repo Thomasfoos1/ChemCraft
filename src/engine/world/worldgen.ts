@@ -716,6 +716,18 @@ export function generateDungeon(): Layout {
     floorLamps(15, 33, 7, 25, 6); // Waterworks (stays clear of the channel at z 27-28)
     floorLamps(13, 34, 79, 104, 5); // Carbon Caverns: still the darkest zone, but readable
     floorLamps(12, 36, 114, 150, 6, (z) => z >= 131 && z <= 141); // Limestone hall, not over the chasm
+    // Grand Laboratory: lab-tile floor lamps plus wall lamps (not behind the periodic table,
+    // which covers the west wall from z 179, and clear of the vault door and the entrance).
+    const labFloor = new Set<number>([B.LAB_TILE, B.LAB_TILE_DARK]);
+    for (let z = 160; z <= 195; z += 5)
+      for (let x = 10; x <= 37; x += 5)
+        if (labFloor.has(w.get(x, FLOOR - 1, z)) && w.get(x, FLOOR, z) === B.AIR) set(x, FLOOR - 1, z, B.LAMP);
+    const labWall = new Set<number>([B.QUARTZ, B.TRAPDOOR]);
+    const labLamp = (x: number, z: number) => {
+      if (labWall.has(w.get(x, y, z))) set(x, y, z, B.LAMP);
+    };
+    for (const z of [178, 186, 194]) labLamp(40, z);
+    for (const x of [12, 16, 31, 35]) { labLamp(x, 156); labLamp(x, 197); }
   }
 
   // Sprinkle a few glowing mushrooms for atmosphere in dark corners.
